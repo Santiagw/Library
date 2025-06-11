@@ -1,5 +1,7 @@
 const myLibrary = [];
 const bookContainer = document.querySelector("#bookContainer")
+const form = document.querySelector("#bookForm")
+const submitBookBtn = document.querySelector("#sumitBook")
 
 function Book(title, author, pages, read, id) {
     this.title = title
@@ -30,5 +32,12 @@ function displayBooks() {
         bookContainer.appendChild(bookInfoContainer)
     }
 }
+
+submitBookBtn.addEventListener("click", ()=>{
+  const titleField = document.querySelector("#title")
+const authorField = document.querySelector("#author")
+const pagesField = document.querySelector("#pages")
+const readField = document.querySelector("#read")
+})
 
 displayBooks()
