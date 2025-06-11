@@ -1,7 +1,7 @@
 const myLibrary = [];
 const bookContainer = document.querySelector("#bookContainer")
 const form = document.querySelector("#bookForm")
-const submitBookBtn = document.querySelector("#sumitBook")
+const submitBookBtn = document.querySelector("#submitBook")
 
 function Book(title, author, pages, read, id) {
     this.title = title
@@ -16,10 +16,10 @@ function addBookToLibrary(title, author, pages, read, id) {
     myLibrary.push(book)
 }
 
-addBookToLibrary("title", "author", "pages", "read", "id")
-
 function displayBooks() {
+bookContainer.innerHTML = ""
     for (const book of myLibrary) {
+      
         const bookInfoContainer = document.createElement("p")
         bookInfoContainer.textContent =
             `
@@ -38,6 +38,7 @@ submitBookBtn.addEventListener("click", ()=>{
 const authorField = document.querySelector("#author")
 const pagesField = document.querySelector("#pages")
 const readField = document.querySelector("#read")
-})
 
+addBookToLibrary(titleField.value, authorField.value, pages.value, read.value)
 displayBooks()
+})
