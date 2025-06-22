@@ -3,6 +3,7 @@ const bookContainer = document.querySelector("#bookContainer")
 const form = document.querySelector("#bookForm")
 const submitBookBtn = document.querySelector("#submitBook")
 const Dialog = document.querySelector("dialog")
+const newBookBtn = document.querySelector(".newBookBtn")
 
 function Book(title, author, pages, read) {
     this.title = title
@@ -33,6 +34,8 @@ bookContainer.innerHTML = ""
         bookContainer.appendChild(bookInfoContainer)
     }
 }
+
+newBookBtn.addEventListener("click", () => Dialog.setAttribute("open", true)) 
 
 submitBookBtn.addEventListener("click", ()=>{
   const titleField = document.querySelector("#title")
