@@ -2,13 +2,14 @@ const myLibrary = [];
 const bookContainer = document.querySelector("#bookContainer")
 const form = document.querySelector("#bookForm")
 const submitBookBtn = document.querySelector("#submitBook")
+const Dialog = document.querySelector("dialog")
 
-function Book(title, author, pages, read, id) {
+function Book(title, author, pages, read) {
     this.title = title
     this.author = author
     this.pages = pages
     this.read = read
-    this.id = id
+    this.id = Math.random()
 }
 
 function addBookToLibrary(title, author, pages, read, id) {
@@ -40,5 +41,6 @@ const pagesField = document.querySelector("#pages")
 const readField = document.querySelector("#read")
 
 addBookToLibrary(titleField.value, authorField.value, pages.value, read.value)
+Dialog.open = false
 displayBooks()
 })
