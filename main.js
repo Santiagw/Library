@@ -5,12 +5,15 @@ const submitBookBtn = document.querySelector("#submitBook")
 const Dialog = document.querySelector("dialog")
 const newBookBtn = document.querySelector(".newBookBtn")
 
-function Book(title, author, pages, read) {
-    this.title = title
-    this.author = author
-    this.pages = pages
-    this.read = read
-    this.id = Math.random()
+
+class Book {
+    constructor(title, author, pages, read) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+        this.id = Math.random();
+    }
 }
 
 function addBookToLibrary(title, author, pages, read, id) {
@@ -19,9 +22,9 @@ function addBookToLibrary(title, author, pages, read, id) {
 }
 
 function displayBooks() {
-bookContainer.innerHTML = ""
+    bookContainer.innerHTML = ""
     for (const book of myLibrary) {
-      
+
         const bookInfoContainer = document.createElement("p")
         bookInfoContainer.textContent =
             `
@@ -35,15 +38,15 @@ bookContainer.innerHTML = ""
     }
 }
 
-newBookBtn.addEventListener("click", () => Dialog.setAttribute("open", true)) 
+newBookBtn.addEventListener("click", () => Dialog.setAttribute("open", true))
 
-submitBookBtn.addEventListener("click", ()=>{
-  const titleField = document.querySelector("#title")
-const authorField = document.querySelector("#author")
-const pagesField = document.querySelector("#pages")
-const readField = document.querySelector("#read")
+submitBookBtn.addEventListener("click", () => {
+    const titleField = document.querySelector("#title")
+    const authorField = document.querySelector("#author")
+    const pagesField = document.querySelector("#pages")
+    const readField = document.querySelector("#read")
 
-addBookToLibrary(titleField.value, authorField.value, pages.value, read.value)
-Dialog.open = false
-displayBooks()
+    addBookToLibrary(titleField.value, authorField.value, pages.value, read.value)
+    Dialog.open = false
+    displayBooks()
 })
